@@ -78,10 +78,12 @@ Write a for-loop that will push even numbers to the `evenNumArr` array. We want 
 Console.log your results.
 */
 var evenNumArr = [];
-for (var i = 0; i <= 5; i += 2){
-  console.log(evenNumArr = i);
+for (var i = 0; i <= 100; i++){
+  if ((i % 2) === 0){
+    evenNumArr.push(i);
+  }
 }
-
+console.log(evenNumArr);
 /* 6) Up the Odds
 Declare a variable named `oddSum` and assign it to the Number value 0.
 
@@ -89,10 +91,12 @@ Write a for-loop that will sum up odd numbers to the `oddSum` variable. We want 
 Console.log your results.
 */
 var oddSum = 0;
-for (var i = 1; i<102; i += 2){
-  oddSum = i += i;
+for (var i = 1; i<101; i++){
+  if(i % 2 != 0){
+    oddSum += i
+  }
 }
-  console.log(oddSum);
+  console.log('6. oddSum '+ oddSum);
 
 
 /* 7) Oops There It is
@@ -103,10 +107,19 @@ Note that every odd index value in `oopsArray` is currently `undefined`. Using a
 */
 
 oopsArray = [ 'turn' , , 'down' , , 'for' , , 'what' ];
+for(var i = 0; i<oopsArray.length; i++){
+  if (i%2 != 0){
+    oopsArray.splice(i, 1, 'nope');
+  }
+}
+console.log('7. oopsArray ' + oopsArray);
+/*oopsArray = [ 'turn' , , 'down' , , 'for' , , 'what' ];
 for (var i = 1; i < 8; i += 2){
   oopsArray.splice(i, 1,'nope');
 }
 console.log('7. oopsArray ' + oopsArray);
+
+
 /* 8) Is It There Oops
 Using a for-loop, iterate through the Array stored at `oopsArray` backwards. Console.log your result. It should look like this:
 
